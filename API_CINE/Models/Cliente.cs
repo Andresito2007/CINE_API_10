@@ -1,4 +1,4 @@
-// namespace es el nombre de mi archivo con la ubi de la carpeta donde esta
+// namespace es el espacio de nombres de mi archivo con la ubi de la carpeta donde esta
 namespace API_CINE.Models;
 
 // CREAMOS LA CLASE CLIENTE (ENTIDAD)
@@ -10,10 +10,10 @@ public class Cliente
     public string Dni { get; set; } = "";
     public string Email { get; set; } = "";
 
-    // CONSTRUCTOR PARA PODER INICIALIZAR OBJETOS
+    // CONSTRUCTOR VACIO PA INICIALIZAR OBJETOS
     public Cliente() { }
 
-    // PRIMARY CONSTRUCTOR PARA INICIALIZAR NUESTROS OBJETOS
+    // CREAMOS NUESTRO OBJETO CLIENTE CON SUS PROPIEDADES
     public Cliente(int id, string nombre, string dni, string email)
     {
         Id = id;
