@@ -6,9 +6,7 @@ namespace API_CINE.Middleware;
 
 // MANEJADOR CENTRALIZADO DE ERRORES , TODA EXCEPCION QUE SE LANCE EN EL CONTROLADOR O SERVICIO LLEGA AQUI PARA NO PONER TRY/CATCH EN CADA METODO
 // IMPLEMENTAMOS LA INTERFAZ IEXCEPTIONHANDLER
-public class ManejadorExcepciones : IExceptionHandler
-public class ManejadorExcepciones : IExceptionHandler
-{
+public class ManejadorExcepciones : IExceptionHandler{
     // ILOGGER PA ESCRIBIR MENSAJES EN CONSOLA Y SE INYECTA SOLO
     private ILogger<ManejadorExcepciones> _logger; 
     
