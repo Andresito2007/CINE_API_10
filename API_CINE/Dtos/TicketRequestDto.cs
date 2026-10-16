@@ -16,7 +16,7 @@ public class TicketRequestDto
 
     // REQUIRED PARA QUE EL CAMPO SEA OBLIGATORIO
     [Required(ErrorMessage = "LA FECHA DE LA FUNCIÓN ES OBLIGATORIA")]
-    public DateTime? FechaFuncion { get; set; }
+    public DateTime? FechaFuncion { get; set; } // FORAZMOS EL ? PA QUE REQUIRED SE ACTIVE
 
     [Required(ErrorMessage = "LA SALA ES OBLIGATORIA")]
 
