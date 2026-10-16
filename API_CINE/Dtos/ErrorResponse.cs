@@ -1,6 +1,6 @@
 namespace API_CINE.Dtos;
 
-// FORMATO UNICO PARA LAS RESPUESTAS DE ERROR ( DTO DE SALIDA)
+// FORMATO UNICO PARA LAS RESPUESTAS DE ERROR ( DTO DE SALIDA PARA EL MIDDLEWARE)
 public class ErrorResponse
 {
     public int Estado { get; set; }
