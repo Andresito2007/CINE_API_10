@@ -15,6 +15,7 @@ public class TicketRepository : ITicketRepository
         return _tickets;
     }
 
+    // USANO METODOS LINQ
     public Ticket? ObtenerPorId(int id)
     {
         return _tickets.FirstOrDefault(t => t.Id == id);
