@@ -55,6 +55,9 @@ CINE_API/
 │   ├── Cliente.cs
 │   ├── Pelicula.cs
 │   └── Ticket.cs
+├── Repository/
+│   ├── ITicketRepository.cs
+│   └── TicketRepository.cs
 ├── Services/
 │   ├── ITicketService.cs
 │   └── TicketService.cs
