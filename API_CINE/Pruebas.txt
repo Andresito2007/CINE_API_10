@@ -1,0 +1,77 @@
+// PRUEBAS CON LOS VERBOS HTTP
+
+// 1 (TIPO GET ) ( TRAER TODOS LOS TICKEST)
+
+api/tickets
+
+// 2 (TIPO GET) ( TRAER UN TICKET CON UN ID EN ESPECIFICO)
+
+api/tickets/2
+
+// 3 (TIPO POST) ( CREAR UN TICKET)
+
+api/tickets
+
+(BODY: RAW , JSON)
+
+{
+  "clienteId": 2,
+  "peliculaId": 1,
+  "fechaFuncion": "2026-10-10T18:00:00",
+  "sala": "Sala 9",
+  "asiento": "G2",
+  "precio": 25.90
+}
+
+//4 (TIPO PUT) ( ACTUALIZAR UN TICKET)
+
+api/tickets/4
+
+(BODY: RAW , JSON)
+
+{
+  "clienteId": 2,
+  "peliculaId": 1,
+  "fechaFuncion": "2026-10-10T18:00:00",
+  "sala": "Sala 9",
+  "asiento": "G2",
+  "precio": 30.50
+}
+
+// 5 (TIPO DELETE) ( ELIMINAR UN TICKET)
+
+api/tickets/4
+
+
+// PROBANDO LAS EXCEPCIONES
+
+1 ( No encontrado ) (404)
+
+api/tickets/99 
+
+2 ( Conflicto) (409)
+
+{
+        "id": 3,
+        "clienteId": 3,
+        "peliculaId": 3,
+        "fechaFuncion": "2026-10-11T21:00:00",
+        "sala": "Sala 2",
+        "asiento": "H10",
+        "precio": 18.00,
+        "estado": "Activo"
+}
+
+3 ( Regla de negocio) (400)
+
+
+{
+        "id": 3,
+        "clienteId": 3,
+        "peliculaId": 7,
+        "fechaFuncion": "2026-10-11T21:00:00",
+        "sala": "Sala 2",
+        "asiento": "B10",
+        "precio": 40.00,
+        "estado": "Activo"
+}
