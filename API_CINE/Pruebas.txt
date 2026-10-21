@@ -49,7 +49,7 @@ api/tickets/4
 
 api/tickets/99 
 
-2 ( Conflicto) (409)
+2 ( Conflicto , un asiento ya reservado) (409)
 
 {
         "id": 3,
@@ -62,7 +62,7 @@ api/tickets/99
         "estado": "Activo"
 }
 
-3 ( Regla de negocio) (400)
+3 ( Regla de negocio , no cumple con la logica de nuestro service) (400)
 
 
 {
