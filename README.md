@@ -165,32 +165,27 @@ La aplicación cuenta con un middleware de manejo centralizado de excepciones y 
 
 El middleware procesa las excepciones contempladas en la aplicación y genera las respuestas de error correspondientes.
 
-# Instalación y ejecución - requisitos previos
+# Instalación y ejecución del proyecto
 
-- SDK de .NET compatible con el proyecto.
-- Visual Studio o Visual Studio Code.
-- Git, si se descarga el repositorio desde GitHub.
-- Postman para realizar pruebas de los endpoints.
+- 1 SDK de .NET compatible con el proyecto.
+- 2 Visual Studio o Visual Studio Code.
+- 3 Descargar el este repo e zip desde GitHub.
+- 4 Extraer el archivo
+- 5 abrirlo en el visual
+- 6 En una nueva terminal accede a la carpeta API_CINE
+  
+## Restaurar dependencias
 
-# Restaurar dependencias
+- 7 Luego desde esa terminal ejecuta esta serie de comandos:
+dotnet restore ( para restaurar las dependencias )
 
-Desde la carpeta que contiene el archivo `CINE_API.csproj`, ejecutar:
+## Compilar el proyecto ( traducir el lenguaje pa que entienda la maquina)
 
-```bash
-dotnet restore
-```
+- 8 dotnet build
 
-# Compilar el proyecto
+## Ejecutar la aplicación ( levantar el servidor)
 
-```bash
-dotnet build
-```
-
-# Ejecutar la aplicación
-
-```bash
-dotnet run
-```
+- 9dotnet run
 
 La consola mostrará las direcciones locales en las que se ejecuta la aplicación. Utilizar la dirección correspondiente para enviar solicitudes desde Postman.
 
