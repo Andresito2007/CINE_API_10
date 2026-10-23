@@ -2,7 +2,7 @@ using API_CINE.Models;
 
 namespace API_CINE.Repository;
 
-// CONTRATO DEL REPOSITORIO : SOLO ACCESO A DATOS DE LA BD
+// CONTRATO DEL REPOSITORIO PARA EL SERVICIO : SOLO ACCESO A  MANUPILAR DATOS DE LA BD
 public interface ITicketRepository
 {
     List<Ticket> ObtenerTodos();
