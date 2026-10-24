@@ -10,7 +10,7 @@ public class ManejadorExcepciones : IExceptionHandler{
     // ILOGGER PA ESCRIBIR MENSAJES EN CONSOLA Y SE INYECTA SOLO
     private ILogger<ManejadorExcepciones> _logger; 
     
-    // INYECCION DE DEPENDENCIAS 
+    // INYECCION DE DEPENDENCIAS ( SE INYECTA SOLO POR .NET)
     public ManejadorExcepciones(ILogger<ManejadorExcepciones> logger)
     {
         _logger = logger;
