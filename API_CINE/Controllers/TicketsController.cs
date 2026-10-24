@@ -21,7 +21,7 @@ public class TicketsController : ControllerBase
         _service = service;
     }
 
-    //ActionResult para devolver datos de tipo Ticket o  lista de tickect
+    // ACCTIONRESULT ES LA REPRESENTACION DE LA RESPUES HTTP DE NUESTRO METODO
     [HttpGet]
     public ActionResult<List<Ticket>> ObtenerTodos()
     {
@@ -54,7 +54,7 @@ public class TicketsController : ControllerBase
     {
         _service.Eliminar(id);
 
-        //retorna un 204 , se completo la soliti pero no hay nd que devolver
+        // METODO QUE RETORNA UN 204 , SALIO BIEN PERO NO RETORNA NADA
         return NoContent();
     }
 }
