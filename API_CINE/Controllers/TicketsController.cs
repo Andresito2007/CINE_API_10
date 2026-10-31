@@ -1,7 +1,7 @@
 using API_CINE.Dtos;
 using API_CINE.Models;
 using API_CINE.Services;
-// USAMOS PARA USAR LOS METODOS DE ASPNETCORE PARA NUESTRO CONTROLADOR
+// (Controllerbase) USAMOS PARA USAR LOS METODOS DE ASPNETCORE PARA NUESTRO CONTROLADOR
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_CINE.Controllers;
