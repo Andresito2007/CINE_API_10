@@ -10,20 +10,17 @@ builder.Services.AddControllers();
 // REGISTRAMOS EL REPOSITORIO , CUANDO ALGUIEN PIDA ITICKETREPOSITORY LE DAMOS TICKETREPOSITORY (INYECCION DE DEPENDENCIAS)
 builder.Services.AddSingleton<ITicketRepository, TicketRepository>();
 
-// REGISTRAMOS EL SERVICIO , CUANDO ALGUIEN PIDA ITICKETSERVICE LE DAMOS TICKETSERVICE (INYECCION DE DEPENDENCIAS)
 builder.Services.AddSingleton<ITicketService, TicketService>();
 
-// REGISTRAMOS NUESTRO MANEJADORES DE ERRORES
+// .NET USARA NUESTRA CLASE CUANDO OCURRA UNA EXCEPCION
 builder.Services.AddExceptionHandler<ManejadorExcepciones>();
 builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 
-
-// ACTIVA EL MIDDLEWARE DE ERRORES PA QUE VAYA PRIMERO PA ATRAPAR LOS ERRORES DE TODO LO QUE VIENE DESPUES
 app.UseExceptionHandler();
 
-app.UseHttpsRedirection(); // REDIRIGE DE HTTP A HTTPS
+app.UseHttpsRedirection(); 
 
 app.UseAuthorization();
 
