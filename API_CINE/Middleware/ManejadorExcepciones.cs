@@ -1,28 +1,25 @@
 using API_CINE.Dtos;
 using API_CINE.Exceptions;
-using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Diagnostics; // namespace de manejo de errores ( IexceptionHanler)
 
 namespace API_CINE.Middleware;
 
-// MANEJADOR CENTRALIZADO DE ERRORES , TODA EXCEPCION QUE SE LANCE EN EL CONTROLADOR O SERVICIO LLEGA AQUI PARA NO PONER TRY/CATCH EN CADA METODO
-// IMPLEMENTAMOS LA INTERFAZ IEXCEPTIONHANDLER
+// (GUARDIAN) TODA EXCEPCION QUE SE LANCE LLEGA AQUI 
 public class ManejadorExcepciones : IExceptionHandler{
-    // ILOGGER PA ESCRIBIR MENSAJES EN CONSOLA Y SE INYECTA SOLO
+    // ILOGGER PA ESCRIBIR MENSAJES EN CONSOLA Y SE INYECTA SOLO POR .NET
     private ILogger<ManejadorExcepciones> _logger; 
     
-    // INYECCION DE DEPENDENCIAS ( SE INYECTA SOLO POR .NET)
     public ManejadorExcepciones(ILogger<ManejadorExcepciones> logger)
     {
         _logger = logger;
     }
-    // ASYNC PARA REALIZAR OPERACIONES ASINCRONAZ , OSEA PODEMOS ESPERAR OPERACIONES ASINCRONAS SIN DETENER EL HILO PRINCIPAL
+    // ASYNC PARA REALIZAR OPERACIONES ASINCRONAZ , ASI PUEDEN ATENDER OTRAS PETIS SIN AFECTAR EL HILO
     public async ValueTask<bool> TryHandleAsync(HttpContext context, Exception exception, CancellationToken cancellationToken)
     {
         int estado;
         string error;
         string mensaje = exception.Message;
-
-        // SEGUN EL TIPO DE EXCEPCION LE ASIGNAMOS EL TIPO DE ESTADO
+        
         switch (exception)
         {
             case NoEncontradoException:
@@ -41,7 +38,7 @@ public class ManejadorExcepciones : IExceptionHandler{
                 // POR SI HAY UN ERROR QUE NO ESPERABAMOS , LO GUARDAMOS EN EL LOG PA VERLO EN EL VISUAL
                 _logger.LogError(exception, "OCURRIO UN BUG ESTIMADO APICINITO");
                 estado = StatusCodes.Status500InternalServerError;
-                error = "ERROR INTERNO";
+                error = "ERROR INTERNO DE CINE API";
                 mensaje = "OCURRIO UN ERROR INSEPERADO APICNITO , INTENTALO MAS TARDE";
                 break;
         }
