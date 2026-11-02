@@ -43,8 +43,8 @@ public class TicketService : ITicketService
             Id = tickets.Count == 0 ? 1 : tickets.Max(t => t.Id) + 1,Estado = "Activo"
             // => lambda
             };
-
-        CopiarDatos(dto, nuevo);
+    
+        CopiarDatos(dto, nuevo); // Le pasa el cuerpo y el id ya asignando
 
         _ticketRepository.Agregar(nuevo);
 
