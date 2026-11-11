@@ -5,7 +5,6 @@ namespace API_CINE.Repository;
 
 // REPOSITORIO PARA LAS CONSULTAS A LA BD
 
-// IMPLEMENTA ITICKETREPOSITORY , PARA TENER LOS METODOS DEFINIDOS EN EL CONTRATO
 public class TicketRepository : ITicketRepository
 {
     private List<Ticket> _tickets = DatosIniciales.Tickets;
