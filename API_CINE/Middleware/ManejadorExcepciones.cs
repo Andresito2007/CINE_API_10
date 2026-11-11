@@ -1,6 +1,6 @@
 using API_CINE.Dtos;
 using API_CINE.Exceptions;
-using Microsoft.AspNetCore.Diagnostics; // namespace de manejo de errores ( IexceptionHanler)
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace API_CINE.Middleware;
 
@@ -24,22 +24,22 @@ public class ManejadorExcepciones : IExceptionHandler{
         {
             case NoEncontradoException:
                 estado = StatusCodes.Status404NotFound; // status code la clase que tiene los estados http
-                error = "NO ENCONTRADO ESTIMADO APICINITO";
+                error = "SOLICITUD NO ENCONTRADA";
                 break;
             case ReglaNegocioException:
                 estado = StatusCodes.Status400BadRequest;
-                error = "SOLICITID INVALIDA ESTIMADO APICINITO";
+                error = "SOLICITUD INVALIDA";
                 break;
             case ConflictoException:
                 estado = StatusCodes.Status409Conflict;
-                error = "CONFLICTO ENCONTRADO ESTIMADO APICINITO";
+                error = "CONFLICTO ENCONTRADO";
                 break;
             default:
                 // POR SI HAY UN ERROR QUE NO ESPERABAMOS , LO GUARDAMOS EN EL LOG PA VERLO EN EL VISUAL
-                _logger.LogError(exception, "OCURRIO UN BUG ESTIMADO APICINITO");
+                _logger.LogError(exception, "OCURRIO UN BUG");
                 estado = StatusCodes.Status500InternalServerError;
                 error = "ERROR INTERNO DE CINE API";
-                mensaje = "OCURRIO UN ERROR INSEPERADO APICNITO , INTENTALO MAS TARDE";
+                mensaje = "OCURRIO UN ERROR , INTENTALO MAS TARDE";
                 break;
         }
 
