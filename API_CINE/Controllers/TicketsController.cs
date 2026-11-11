@@ -1,27 +1,23 @@
 using API_CINE.Dtos;
 using API_CINE.Models;
 using API_CINE.Services;
-// (Controllerbase) USAMOS PARA USAR LOS METODOS DE ASPNETCORE PARA NUESTRO CONTROLADOR
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_CINE.Controllers;
 
-// CONTROLADOR  , EL QUE VA A RECIBIR LAS PETICIONES HTTP Y LLAMAR AL SERVICIO
 [ApiController]
 [Route("api/tickets")]
 
-// HEREDARA LOS METODOS DEL CONTROLBASE
 public class TicketsController : ControllerBase
 {
-    private ITicketService _service; // SOLO CONOCE EL INTERFAZ NO LA CLASE PA QUE SEA MAS FACIL CAMBIARLA SI QUEREMOS
+    private ITicketService _service;
 
-    // INYECCION DE DEPENDENCIAS , PARA PODER USAR NUESTRO SERVICIO SIN INSTANCIAR LA CLASE YA NOS LO DA EL BUILDER EN PROGRAM.CS
+    // INYECCION DE DEPENDENCIAS
     public TicketsController(ITicketService service)
     {
         _service = service;
     }
 
-    // ACCTIONRESULT ES LA REPRESENTACION DE LA RESPUES HTTP DE NUESTRO METODO
     [HttpGet]
     public ActionResult<List<Ticket>> ObtenerTodos()
     {
@@ -53,8 +49,7 @@ public class TicketsController : ControllerBase
     public IActionResult Eliminar(int id)
     {
         _service.Eliminar(id);
-
-        // METODO QUE RETORNA UN 204 , SALIO BIEN PERO NO RETORNA NADA
+        
         return NoContent();
     }
 }
